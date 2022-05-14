@@ -7,10 +7,16 @@ module.exports = {
   output: {
     path:path.resolve(__dirname, "dist"),
   },
+  resolve: {
+    alias: {
+      components: path.resolve(__dirname, 'src/components'),
+    },
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       {
-        test: /\.?js|jsx$/,
+        test: /\.?(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
